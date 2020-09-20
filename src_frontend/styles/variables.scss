@@ -1,0 +1,23 @@
+$mediaSizes: (
+  xs: 320px,
+  s: 480px,
+  m: 768px,
+  l: 1024px,
+  xl: 1224px,
+);
+
+@mixin media($breakPoint) {
+  @media (min-width: map-get($mediaSizes, $breakPoint)) {
+    @content;
+  }
+}
+
+$font: 'Roboto Condensed Light', sans-serif;
+$fontHeading: 'Teko Regular', sans-serif;
+
+$cPrimary: #993f91;
+$cPurple: #43306b;
+$cError: #e80000;
+$cErrorBg: #ffebe1;
+$cSuccess: #12b800;
+$cSuccessBg: #e4ffe1;

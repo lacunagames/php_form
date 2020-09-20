@@ -1,0 +1,141 @@
+@import 'variables';
+@font-face {
+  font-family: 'Roboto Condensed Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url(../fonts/RobotoCondensed-Light.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Teko Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Teko Regular'), local('Teko-Regular'),
+    url(../fonts/Teko-Regular.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  min-width: 320px;
+  font-family: $font;
+  font-size: 16px;
+  padding: 15px;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+legend {
+  font-family: $fontHeading;
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: $cPurple;
+}
+
+h2,
+.h2,
+legend {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+  margin: 0 0 30px;
+}
+
+.input-row {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+input {
+  font-size: 18px;
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 0;
+  border: 1px solid lighten($cPurple, 10%);
+
+  &:hover,
+  &:focus {
+    border-color: #000;
+  }
+
+  &:focus {
+    outline: 1px solid $cPurple;
+    border-radius: 0;
+  }
+}
+
+button,
+.button {
+  font-size: 20px;
+  padding: 3px 8px;
+  background: #666;
+  border: 2px solid #000;
+  color: #fff;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  border-radius: 0;
+
+  &:hover,
+  &:focus {
+    background-color: #888;
+    border-color: $cPurple;
+  }
+  &:focus {
+    border-color: $cPurple;
+    outline: 1px solid $cPurple;
+  }
+}
+.primary {
+  background-color: darken($cPrimary, 5%);
+  border-color: $cPurple;
+
+  &:hover,
+  &:focus {
+    background-color: $cPrimary;
+  }
+}
+
+.error,
+.success {
+  color: $cError;
+  font-weight: 700;
+}
+
+.success {
+  color: $cSuccess;
+}
+
+.hidden {
+  display: none;
+}
+
+.access {
+  position: absolute;
+  left: -9999em;
+  // color: orangered;
+}

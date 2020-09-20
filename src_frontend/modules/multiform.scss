@@ -1,0 +1,125 @@
+@import '../styles/variables';
+
+.multiform {
+  background: #f3f3f3;
+  padding: 15px;
+  display: grid;
+  grid-template-rows: auto auto auto 50px;
+  grid-template-areas:
+    'heading'
+    'fieldsets'
+    'message'
+    'actions';
+
+  .heading {
+    grid-area: heading;
+    margin: -15px -15px 0;
+    padding: 15px 15px 0;
+    background: #ddd;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .message {
+    grid-area: message;
+    padding: 15px;
+    font-size: 18px;
+    margin: 0 -15px 15px;
+    background: $cErrorBg;
+
+    p {
+      position: relative;
+      padding-left: 50px;
+
+      &:before {
+        content: '⚠';
+        font-size: 30px;
+        position: absolute;
+        left: 5px;
+        top: -10px;
+      }
+    }
+
+    &.success {
+      background-color: $cSuccessBg;
+      p:before {
+        content: '✔';
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .fieldsets {
+    grid-area: fieldsets;
+
+    fieldset:last-child {
+      margin-bottom: 15px;
+    }
+    fieldset:first-child:last-child button {
+      display: none;
+    }
+  }
+
+  legend {
+    padding: 15px 0 0;
+    margin: 0 0 10px;
+  }
+
+  .actions {
+    grid-area: actions;
+    text-align: right;
+
+    button:first-child {
+      float: right;
+      margin-right: 0;
+    }
+  }
+
+  @include media(s) {
+    max-height: 100%;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      'heading'
+      'message'
+      'fieldsets';
+
+    .message {
+      margin-bottom: 0;
+    }
+
+    .fieldsets {
+      margin: 0 -15px;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    .actions {
+      grid-area: heading;
+      text-align: right;
+      margin-right: 0;
+      padding-top: 5px;
+    }
+  }
+  @include media(m) {
+    .fieldsets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+
+      fieldset {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include media(l) {
+    max-width: 1200px;
+    margin: 0 auto;
+    .fieldsets {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
